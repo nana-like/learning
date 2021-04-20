@@ -1,8 +1,6 @@
 // 정규 표현식 regular expression : 문자열에서 특정한 문자를 찾아내는 도구
 // 자바스크립트와 같은 언어(자바 등 다른 언어들에서도 사용)
 
-생활코딩 : http://opentutorials.org/course/1 입니다.
-네이버 : http://naver.com 입니다.
 
 // 컴파일 : 우리가 어떠한 작업을 하기 위해 우리가 필요한 대상(패턴)을 찾는 것
 // 실행 : 어떠한 작업을 구체적으로 하는 것
@@ -91,4 +89,13 @@ var pattern = /(\w+)\s(\w+)/;
 var str = "coding everybody";
 var result = str.replace(pattern, "$2, $1");   // $2는 두번째 그룹(\w+), $1는 첫번째 그룹(\w+) // 이 pattern을 $2, $1로 치환
 console.log(result);
-everybody, coding
+// => everybody, coding
+
+// 글귀에서 url만 발췌하여 링크를 걸어주는 작업하기
+
+var urlPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
+var content = 생활코딩 : http://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다.;
+var result = content.replace(urlPattern, function(url) {
+    return '<a href="'+url+'">'+url+'</a>';
+});
+console.log(result);
