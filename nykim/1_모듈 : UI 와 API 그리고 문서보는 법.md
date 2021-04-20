@@ -1,4 +1,4 @@
-# 4/20
+# 모듈 / UI 와 API 그리고 문서보는 법
 
 ## 모듈
 
@@ -27,4 +27,9 @@ function hello() {
 
 * Application Programming Interface
 * 응용 프로그램에서 사용할 수 있도록, OS나 프로그래밍 언어가 제공하는 인터페이스
-* ex) window.alert()는 OS가 제공하는 API다
+* ex) window.alert()는 OS가 제공하는 JavaScript API다
+* ex) 기상청 API는 JSON 형태로 제공되는 Open API다
+
+## 인터페이스
+
+* 층과 층 사이의 연결. 사용자가 시스템 기능을 사용하도록 돕는 게 바로 User Interface
