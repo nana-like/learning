@@ -42,5 +42,9 @@ exports.circumference = function(r) {
 
 
 // # 라이브러리
-// 제이쿼리 라이브러리
+// 모듈이 프로그램을 구성하는 작은 부품으로서의 로직을 의미한다면
+// 라이브러리는 자주 사용되는 로직을 재사용하기 편리하도록 잘 정리한 일련의 코드들의 집합을 의미
+// 제이쿼리 라이브러리 http://jquery.com
+// <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+// 다운로드받은 파일 가져오기 : <script type="text/javascript" src="jquery.js"></script>
 
