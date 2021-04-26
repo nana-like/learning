@@ -184,6 +184,91 @@
           //urlPattern에서 약속한대로 생긴 애들이 'url'이라는 parameter로 변해서 function 안에 들어가는 것
         </pre>
       </div>
+
+      <h2>13. 함수지향 - 유효범위 Scope</h2>
+      <div class="content">
+        <p>변수의 수명</p>
+        <h3>| 전역변수와 지역변수</h3>
+        <pre>
+          var vscope = 'global';
+          function fscope() {
+            var vscope = 'local';
+            alert(vscope);
+          }
+          fscope(); //alert local
+          alert(vscope); //alert global
+        </pre>
+        <pre>
+          var vscope = 'global';
+          function fscope() {
+            vscope = 'local';
+          }
+          fscope();
+          alert(vscope); //local (전역을 갈아치움)
+        </pre>
+        <pre>
+          var vscope = 'global';
+          function fscope() {
+            var vscope = 'local';
+            vscope = 'local';
+          }
+          fscope();
+          alert(vscope); //local (전역을 갈아치움22)
+
+          웬만하면 local로 사용. var 붙이기
+        </pre>
+
+        <h3>| 유효범위의 효용</h3>
+        <pre>
+          function a() {
+            var i = 0;
+          }
+          for (var i = 0; i < 5; i++) {
+            a();
+            document.write(i);
+          }
+          // i = 01234
+        </pre>
+        <pre>
+          function a() {
+            i = 0;
+          }
+          for (var i = 0; i < 5; i++) {
+            a();
+            document.write(i);
+          }
+          // global이 i = 0 으로 계속 리셋됨 , i < 5 가 항상 성립되므로 무한 for loop
+        </pre>
+
+        <h3>| 전역변수의 사용</h3>
+        <pre>
+          (function() {
+            var global같지만local인애
+          }());
+          //익명 함수 바로 호출하는 방법
+        </pre>
+
+        <h3>| 유효범위의 대상</h3>
+        <p>Javascript의 경우 function 안에서만 local variables가 적용됨. for, while 이런 애들은 상관없음</p>
+
+        <h3>| 정적 유효범위 Static Scoping / Lexical Scoping</h3>
+        <pre>
+          var i = 5;
+
+          function a() {
+            var i = 10;
+            b();
+          }
+
+          function b() {
+            document.write(i);
+          }
+
+          a();
+          // i = 5;
+          // b()가 호출되는 것이 아니고 b()가 정의되는 시점. a() 밖이므로 global 적용
+        </pre>
+      </div>
     </main>
   </body>
 </html>
