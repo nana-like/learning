@@ -82,6 +82,21 @@ NaN === NaN //false (you can't compare 'NaN')
 
 ---
 
+## 5. 조건문 Conditional Statement
+
+#### what's considered as 'false' in JS
+```javascript
+if (undefined)
+if (null)
+if (NaN)
+if ('') //empty string
+
+var a;
+if (a) //a is not defined
+```
+
+---
+
 ## 10. 모듈
 
 * script를 개별 파일에 저장해서 따로 호출하는 방법을 모듈이라고 하는 것이었다.
