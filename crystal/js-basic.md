@@ -1,5 +1,102 @@
 # 생활코딩 Javascript Basic - 노트정리
 
+## 1. Javascript 기본
+
+* 아는 내용이라 패스
+
+---
+
+## 2. 숫자와 문자 Number and String
+
+### | Number Calculation
+
+* 참고 링크 : [Javascrip 사전](https://opentutorials.org/course/50/37)
+
+```javascript
+Math.pow(3,2); //3^2 (3 power 2)
+Math.round(10.6); //round to integer
+Math.ceil(10.2); //round up (to ceiling)
+Math.flooe(10.2); //round down (to floor)
+Math.sqrt(9); //squared
+Math.random(); //random generated
+Math.random() * 100; //numbers less than 100
+Math.round(Math.random() * 100); //round to integer
+```
+
+#### To find out the type
+
+```javascript
+console.log(type of 1); // number
+console.log(type of '1'); // string
+```
+
+---
+
+## 3. 변수 Variable
+
+* 패스
+
+---
+
+## 4. 비교 Comparison
+
+* 참고 링크 : [JS Comparision](https://dorey.github.io/JavaScript-Equality-Table/)
+
+```javascript
+== //equal operator 걍 사용하지마..
+=== //strict equal operator
+```
+
+```javascript
+1 == '1'; //true
+1 === '1'; //false
+```
+
+```javascript
+null : does not have a value. defined but empty
+undefined: not defined at all.
+
+null == undefined //true
+null === undefined //false
+```
+
+```javascript
+if ==
+1 : true
+rest : false
+
+true == 1 //true
+true == 2 //false
+true === 1 //false
+true == '1' //true
+true === '1' //false
+```
+
+```javascript
+NaN : Not a Number
+ex) 0 / 0
+
+0 === -0 //true
+NaN === NaN //false (you can't compare 'NaN')
+```
+
+---
+
+## 5. 조건문 Conditional Statement
+
+#### what's considered as 'false' in JS
+```javascript
+if (undefined)
+if (null)
+if (NaN)
+if ('') //empty string
+
+var a;
+if (a) //a is not defined
+```
+
+---
+
 ## 10. 모듈
 
 * script를 개별 파일에 저장해서 따로 호출하는 방법을 모듈이라고 하는 것이었다.
@@ -9,7 +106,7 @@
 
 ## 11. UI 와 API 그리고 문서보는 법
 
-* 아는 내용이라 패스
+* 패스
 
 ---
 
