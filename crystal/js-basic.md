@@ -10,7 +10,7 @@
 
 ### | Number Calculation
 
-* 참고 링크 : [Javascrip 사전](https://opentutorials.org/course/50/37)
+* 참고 링크 : [Javascript 사전](https://opentutorials.org/course/50/37)
 
 ```javascript
 Math.pow(3,2); //3^2 (3 power 2)
@@ -18,7 +18,7 @@ Math.round(10.6); //round to integer
 Math.ceil(10.2); //round up (to ceiling)
 Math.flooe(10.2); //round down (to floor)
 Math.sqrt(9); //squared
-Math.random(); //random generated
+Math.random(); //randomly generated
 Math.random() * 100; //numbers less than 100
 Math.round(Math.random() * 100); //round to integer
 ```
@@ -53,7 +53,7 @@ console.log(type of '1'); // string
 ```
 
 ```javascript
-null : does not have a value. defined but empty
+null : defined but empty
 undefined: not defined at all.
 
 null == undefined //true
@@ -132,9 +132,9 @@ var pattern = new RegExp('a');
 ```
 
 #### RegExp로 하는 일
-  * 필요한 정보만 추출 = exec
-  * 원하는 정보가 있는 지 확인 = test
-  * 특정 정보를 치환 = replace
+  * to execute = exec()
+  * to test = test()
+  * to replace = replace()
 
 #### 1. exec()
 ```javascript
@@ -159,9 +159,9 @@ pattern.match() //exec랑 비슷함
 #### 3. text()
 ```javascript
 var pattern = /a/;
-pattern.text('abcde');
+pattern.test('abcde');
 // -> true
-pattern.text('bcdef');
+pattern.test('bcdef');
 // -> false
 ```
 
