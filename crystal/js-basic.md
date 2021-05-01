@@ -97,6 +97,55 @@ if (a) //a is not defined
 
 ---
 
+## 6. 반복문 Loop / Iterate
+
+### | while
+
+```javascript
+var i = 0;
+while (i < 10) {
+  document.write('hi' + i);
+  i++;
+}
+```
+
+### | for
+while에서 쓴 세개의 덩어리를 for로 한번에 묶어줌
+```javascript
+for (var i = 0; i < 10; i++) {
+  document.write('hi' + i);
+}
+```
+
+```javascript
+var i = 0;
+i++; //0
+i++; //1
+//먼저 나타낸 다음에 더함
+
+var i = 0;
+++i; //1
+++i; //2
+//먼저 더한 다음에 나타냄
+```
+
+
+### | 반복문의 제어
+```javascript
+break; //반복문 탈출
+continue; //멈칫..그 순간엔 멈춤. 하지만 계속 진행
+```
+
+### | 반복문의 중첩사용과 디버거
+```javascript
+for (var i = 0; i < 10; i++) {
+  for (var j = 0; j < 10; j++) {
+    document.write('hello' + i + j + '<br>'); //앞이 문자여서 i j 도 문자 취급. 숫자로 계산되지 않음.
+  }
+}
+```
+---
+
 ## 10. 모듈
 
 * script를 개별 파일에 저장해서 따로 호출하는 방법을 모듈이라고 하는 것이었다.
