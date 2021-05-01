@@ -23,7 +23,7 @@ Math.random() * 100; //numbers less than 100
 Math.round(Math.random() * 100); //round to integer
 ```
 
-#### To find out the type
+To find out the type
 
 ```javascript
 console.log(type of 1); // number
@@ -84,7 +84,7 @@ NaN === NaN //false (you can't compare 'NaN')
 
 ## 5. 조건문 Conditional Statement
 
-#### what's considered as 'false' in JS
+what's considered as 'false' in JS
 ```javascript
 if (undefined)
 if (null)
@@ -131,7 +131,7 @@ var pattern = /a/;
 var pattern = new RegExp('a');
 ```
 
-#### RegExp로 하는 일
+RegExp로 하는 일
   * to execute = exec()
   * to test = test()
   * to replace = replace()
@@ -156,7 +156,7 @@ pattern.exec('bcdef');
 pattern.match() //exec랑 비슷함
 ```
 
-#### 3. text()
+#### 3. test()
 ```javascript
 var pattern = /a/;
 pattern.test('abcde');
