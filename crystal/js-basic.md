@@ -146,6 +146,33 @@ for (var i = 0; i < 10; i++) {
 ```
 ---
 
+## 7. 함수 Function
+
+```javascript
+function get_arguments(parameter1 + parameter2) {
+  return parameter1 + parameter2;
+  //any line after 'return' won't be shown. function stops at 'return'.
+}
+
+alert(get_arguments(argument1 + argument2));
+```
+### | 다양한 함수 정의 방법
+```javascript
+//variable 안에 함수 넣기
+numbering = function() {}
+
+numbering();
+```
+
+```javascript
+//익명 함수 바로 호출하기
+(function() {
+
+})();
+```
+
+---
+
 ## 10. 모듈
 
 * script를 개별 파일에 저장해서 따로 호출하는 방법을 모듈이라고 하는 것이었다.
@@ -358,7 +385,6 @@ for (var i = 0; i < 5; i++) {
 ### | 전역변수의 사용
 
 ```javascript
-//익명 함수 바로 호출하는 방법
 (function() {
   var global같지만local인애
 }());
