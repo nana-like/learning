@@ -10,7 +10,7 @@
 
 ### | Number Calculation
 
-* 참고 링크 : [Javascrip 사전](https://opentutorials.org/course/50/37)
+* 참고 링크 : [Javascript 사전](https://opentutorials.org/course/50/37)
 
 ```javascript
 Math.pow(3,2); //3^2 (3 power 2)
@@ -18,12 +18,12 @@ Math.round(10.6); //round to integer
 Math.ceil(10.2); //round up (to ceiling)
 Math.flooe(10.2); //round down (to floor)
 Math.sqrt(9); //squared
-Math.random(); //random generated
+Math.random(); //randomly generated
 Math.random() * 100; //numbers less than 100
 Math.round(Math.random() * 100); //round to integer
 ```
 
-#### To find out the type
+To find out the type
 
 ```javascript
 console.log(type of 1); // number
@@ -53,7 +53,7 @@ console.log(type of '1'); // string
 ```
 
 ```javascript
-null : does not have a value. defined but empty
+null : defined but empty
 undefined: not defined at all.
 
 null == undefined //true
@@ -84,7 +84,7 @@ NaN === NaN //false (you can't compare 'NaN')
 
 ## 5. 조건문 Conditional Statement
 
-#### what's considered as 'false' in JS
+what's considered as 'false' in JS
 ```javascript
 if (undefined)
 if (null)
@@ -93,6 +93,82 @@ if ('') //empty string
 
 var a;
 if (a) //a is not defined
+```
+
+---
+
+## 6. 반복문 Loop / Iterate
+
+### | while
+
+```javascript
+var i = 0;
+while (i < 10) {
+  document.write('hi' + i);
+  i++;
+}
+```
+
+### | for
+while에서 쓴 세개의 덩어리를 for로 한번에 묶어줌
+```javascript
+for (var i = 0; i < 10; i++) {
+  document.write('hi' + i);
+}
+```
+
+```javascript
+var i = 0;
+i++; //0
+i++; //1
+//먼저 나타낸 다음에 더함
+
+var i = 0;
+++i; //1
+++i; //2
+//먼저 더한 다음에 나타냄
+```
+
+
+### | 반복문의 제어
+```javascript
+break; //반복문 탈출
+continue; //멈칫..그 순간엔 멈춤. 하지만 계속 진행
+```
+
+### | 반복문의 중첩사용과 디버거
+```javascript
+for (var i = 0; i < 10; i++) {
+  for (var j = 0; j < 10; j++) {
+    document.write('hello' + i + j + '<br>'); //앞이 문자여서 i j 도 문자 취급. 숫자로 계산되지 않음.
+  }
+}
+```
+---
+
+## 7. 함수 Function
+
+```javascript
+function get_arguments(parameter1 + parameter2) {
+  return parameter1 + parameter2;
+  //any line after 'return' won't be shown. function stops at 'return'.
+}
+
+alert(get_arguments(argument1 + argument2));
+```
+### | 다양한 함수 정의 방법
+```javascript
+//variable 안에 함수 넣기
+numbering = function() {}
+
+numbering();
+```
+
+```javascript
+//익명 함수 바로 호출하기
+(function() {
+
+})();
 ```
 
 ---
@@ -131,10 +207,10 @@ var pattern = /a/;
 var pattern = new RegExp('a');
 ```
 
-#### RegExp로 하는 일
-  * 필요한 정보만 추출 = exec
-  * 원하는 정보가 있는 지 확인 = test
-  * 특정 정보를 치환 = replace
+RegExp로 하는 일
+  * to execute = exec()
+  * to test = test()
+  * to replace = replace()
 
 #### 1. exec()
 ```javascript
@@ -156,12 +232,12 @@ pattern.exec('bcdef');
 pattern.match() //exec랑 비슷함
 ```
 
-#### 3. text()
+#### 3. test()
 ```javascript
 var pattern = /a/;
-pattern.text('abcde');
+pattern.test('abcde');
 // -> true
-pattern.text('bcdef');
+pattern.test('bcdef');
 // -> false
 ```
 
@@ -309,7 +385,6 @@ for (var i = 0; i < 5; i++) {
 ### | 전역변수의 사용
 
 ```javascript
-//익명 함수 바로 호출하는 방법
 (function() {
   var global같지만local인애
 }());
