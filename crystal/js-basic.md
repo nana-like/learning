@@ -173,6 +173,44 @@ numbering();
 
 ---
 
+## 8. 배열 Array 
+
+```javascript
+function get_values() {
+  return ['a', 'b', 'c'];
+}
+//function can only return one value
+//but can return 'one array' containing 'several' values.
+```
+
+```javascript
+var myArray = ['a', 'b', 'c'];
+
+myArray.push('d'); //['a', 'b', 'c', 'd']
+myArray.concat(['1', '2']); //must put array //['a', 'b', 'c', '1', '2']
+myArray.unshift('z'); //['z', 'a', 'b', 'c']
+myArray.shift(); //['b', 'c']
+myArray.pop(); //['a', 'b']
+```
+
+```javascript
+myArray.splice(index, removeHowMany, element1, ..., elementN)
+
+myArray.splice(1, 0, 'm'); //['a', 'm', 'b', 'c']
+myArray.splice(1, 1, 'x', 'y'); //['a', 'x', 'y', 'c']
+```
+
+```javascript
+var myArray = ['c', 'a', 'b'];
+
+myArray.sort(); //['a', 'b', 'c']
+myArray.reverse(); //['c', 'b', 'a']
+
+//그 외에도 내 맘대로 sorting function 만들면 됨
+```
+
+---
+
 ## 10. 모듈
 
 * script를 개별 파일에 저장해서 따로 호출하는 방법을 모듈이라고 하는 것이었다.
