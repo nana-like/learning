@@ -173,6 +173,103 @@ numbering();
 
 ---
 
+## 8. 배열 Array 
+
+```javascript
+function get_values() {
+  return ['a', 'b', 'c'];
+}
+//function can only return one value
+//but can return 'one array' containing 'several' values.
+```
+
+```javascript
+var myArray = ['a', 'b', 'c'];
+
+myArray.push('d'); //['a', 'b', 'c', 'd']
+myArray.concat(['1', '2']); //must put array //['a', 'b', 'c', '1', '2']
+myArray.unshift('z'); //['z', 'a', 'b', 'c']
+myArray.shift(); //['b', 'c']
+myArray.pop(); //['a', 'b']
+```
+
+```javascript
+myArray.splice(index, removeHowMany, element1, ..., elementN)
+
+myArray.splice(1, 0, 'm'); //['a', 'm', 'b', 'c']
+myArray.splice(1, 1, 'x', 'y'); //['a', 'x', 'y', 'c']
+```
+
+```javascript
+var myArray = ['c', 'a', 'b'];
+
+myArray.sort(); //['a', 'b', 'c']
+myArray.reverse(); //['c', 'b', 'a']
+
+//그 외에도 내 맘대로 sorting function 만들면 됨
+```
+
+---
+
+## 9. 객체 Object
+
+* index를 0,1,2(array처럼)이 아닌 데이터를 추가할 수 있음
+* 그렇게 쓰는 index = 'key'
+
+```javascript
+var myObject = {'alpha': 10, 'beta': 6, 'gamma': 80};
+```
+
+```javascript
+var myObject = {};
+
+myObject['alpha'] = 10;
+myObject['beta'] = 6;
+myObject['gamma'] = 80;
+```
+
+```javascript
+var myObject = new Object();
+```
+
+```javascript
+myObject['alpha'];
+myObject['al'+'pha']; 
+myObject.alpha;
+```
+
+### | 객체와 반복문
+
+```javascript
+for (key in object) {}
+
+for (var myKey in myObject) {
+  console.log(alphabet, ':', myObject[key]);
+  //alpha : 10
+  //beta : 6
+  //gamma : 80
+}
+```
+### | 객체 지향 프로그래밍 Object Oriented Programming, OOP
+
+```javascript
+var myObject = {
+  'myList' : {'a' : 1, 'b' : 2},
+  'myFunction' : function() {
+    for (var name in this.myList) {
+      consol.log(name, this.list[name]);
+    }
+  }
+}
+
+myObject['myFunction']();
+myObject.myFunction();
+//a 1
+//b 2
+```
+
+---
+
 ## 10. 모듈
 
 * script를 개별 파일에 저장해서 따로 호출하는 방법을 모듈이라고 하는 것이었다.
@@ -309,106 +406,4 @@ var result = content.replace(urlPattern, function(url){
 console.log(result);
 
 //urlPattern에서 약속한대로 생긴 애들이 'url'이라는 parameter로 변해서 function 안에 들어가는 것
-```
-
----
-
-## 13. 함수지향 - 유효범위 Scope
-* Scope이란? 변수의 수명을 말한다.
-
-### | 전역변수와 지역변수
-
-```javascript
-var vscope = 'global';
-
-function fscope() {
-  var vscope = 'local';
-  alert(vscope);
-}
-
-fscope(); //alert local
-alert(vscope); //alert 'global'
-```
-
-```javascript
-var vscope = 'global';
-
-function fscope() {
-  vscope = 'local';
-}
-
-fscope();
-alert(vscope); //'local' (전역을 갈아치움)
-```
-
-```javascript
-var vscope = 'global';
-
-function fscope() {
-  var vscope = 'local';
-  vscope = 'local';
-}
-
-fscope();
-alert(vscope); //'local' (전역을 갈아치움22)
-```
-* 그러므로 웬만하면 var 붙여서 local로 사용한다.
-
-### | 유효범위의 효용
-
-```javascript
-function a() {
-  var i = 0;
-}
-
-for (var i = 0; i < 5; i++) {
-  a();
-  document.write(i);
-}
-
-// i = 01234
-```
-
-```javascript
-function a() {
-  i = 0;
-}
-
-for (var i = 0; i < 5; i++) {
-  a();
-  document.write(i);
-}
-
-// global이 i = 0 으로 계속 리셋됨 , i < 5 가 항상 성립되므로 무한 for loop
-```
-
-### | 전역변수의 사용
-
-```javascript
-(function() {
-  var global같지만local인애
-}());
-```
-### | 유효범위의 대상
-* Javascript의 경우 function 안에서만 local variables가 적용됨. for, while 이런 애들은 상관없음
-
-### | 정적 유효범위 Static Scoping / Lexical Scoping
-
-```javascript
-var i = 5;
-
-function a() {
-  var i = 10;
-  b();
-}
-
-function b() {
-  document.write(i);
-}
-
-a();
-
-// i = 5;
-// b()가 호출되는 시점이 아니라 b()가 정의되는 시점으로 적용됨
-// a() 밖이므로 global 적용
 ```
