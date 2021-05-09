@@ -211,6 +211,65 @@ myArray.reverse(); //['c', 'b', 'a']
 
 ---
 
+## 9. 객체 Object
+
+* index를 0,1,2(array처럼)이 아닌 데이터를 추가할 수 있음
+* 그렇게 쓰는 index = 'key'
+
+```javascript
+var myObject = {'alpha': 10, 'beta': 6, 'gamma': 80};
+```
+
+```javascript
+var myObject = {};
+
+myObject['alpha'] = 10;
+myObject['beta'] = 6;
+myObject['gamma'] = 80;
+```
+
+```javascript
+var myObject = new Object();
+```
+
+```javascript
+myObject['alpha'];
+myObject['al'+'pha']; 
+myObject.alpha;
+```
+
+### | 객체와 반복문
+
+```javascript
+for (key in object) {}
+
+for (var myKey in myObject) {
+  console.log(alphabet, ':', myObject[key]);
+  //alpha : 10
+  //beta : 6
+  //gamma : 80
+}
+```
+### | 객체 지향 프로그래밍 Object Oriented Programming, OOP
+
+```javascript
+var myObject = {
+  'myList' : {'a' : 1, 'b' : 2},
+  'myFunction' : function() {
+    for (var name in this.myList) {
+      consol.log(name, this.list[name]);
+    }
+  }
+}
+
+myObject['myFunction']();
+myObject.myFunction();
+//a 1
+//b 2
+```
+
+---
+
 ## 10. 모듈
 
 * script를 개별 파일에 저장해서 따로 호출하는 방법을 모듈이라고 하는 것이었다.
