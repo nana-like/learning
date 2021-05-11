@@ -210,3 +210,83 @@ Ajax : Asynchronous Javascript And XML
 
 * 모든걸 순차적으로 진행할 순 없음
 * 그렇기에 '저장'해놓고 뒤에서 조용히 처리한 다음에 call 되기 위해 기다리는 것
+
+---
+
+## 15. 함수지향 - 클로저 Closure
+
+> A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). A closure gives you access to an outer function’s scope from an inner function.
+
+```javascript
+function outer() {
+  var title = 'outsider';
+  function inner() {
+    alert(title); //can access outer variable
+  }
+  inner();
+}
+outer();
+```
+
+```javascript
+function outer() {
+  var title = 'my will';
+  return function() {
+    alert(title);
+  }
+}
+inner = outer(); //여기서 실행이 됐기 때문에 outer는 수명을 다함 ㅂㅂ
+inner(); //inner 안의 함수를 호출해본다
+
+//outer는 수명을 다했지만 그 안의 alert(title)은 outer의 var를 쓸 수 있음
+```
+
+### | Private Variable
+
+```javascript
+function factory_musical(title) {
+  return {
+    get_title: function() {
+      return title;
+    },
+    set_title: function(_title) {
+      title = _title;
+    }
+  }
+}
+wicked = factory_musical('The Wicked');
+dracula = factory_musical('Dracula');
+
+alert(wicked.get_title()); //The Wicked
+alert(dracula.get_title()); //Dracula
+
+dracula.set_title('Dracula: The Musical');
+
+alert(wicked.get_title()); //The Wicked
+alert(dracula.get_title()); //Dracula: The Musical < NEW!
+
+//'title'이라는 variable은 get_title과 set_title만이 수정할 수 있음
+//이것이 private variable
+```
+
+### | 클로저의 응용
+
+```javascript
+var arr = [];
+for (var i = 0; i < 5; i++) {
+  arr[i] = function() {
+    return i; //5만 다섯번 나옴
+  }
+}
+```
+
+```javascript
+var arr = [];
+for (var i = 0; i < 5; i++) {
+  arr[i] = function(id) { //i가 만들어지는 시점마다 id로 보내서 각각 return
+    return function() {
+      return id; //0~4
+    }
+  }(i);
+}
+```

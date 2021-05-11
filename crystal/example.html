@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        var numbers = [3, 1, 20, 7, 10, 2,];
+        numbers.sort(); 
+
+        var hello = function(a, b) {
+            console.log(a, b);
+            return a - b;
+        }
+        console.log(numbers.sort(hello));
+    </script> -->
+
+    <!-- <script>
+        function factory_musical(title) {
+        return {
+            get_title: function() {
+            return title;
+            },
+            set_title: function(_title) {
+            title = _title;
+            }
+        }
+        }
+        wicked = factory_musical('The Wicked');
+        dracula = factory_musical('Dracula');
+
+        console.log(wicked.get_title());
+        console.log(dracula.get_title());
+
+        dracula.set_title('Dracula: The Musical');
+
+        console.log(wicked.get_title());
+        console.log(dracula.get_title());
+    </script> -->
+
+    <script>
+        var arr = [];
+        for (var i = 0; i < 5; i++) {
+            arr[i] = function(id) { //만들어지는 시점마다 id를 return
+                return function() {
+                    return id; //0~4
+                }
+            }(i);
+        }
+
+        for (var index in arr) {
+            console.log(arr[index]());
+        }
+    </script>
+</body>
+</html>
