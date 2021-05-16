@@ -290,3 +290,45 @@ for (var i = 0; i < 5; i++) {
   }(i);
 }
 ```
+
+---
+
+## 16. 함수지향 - arguments
+
+* 유사 배열, object
+
+```javascript
+function myFunc(arg1) {
+  //arg1 라는 variable = parameter (매개변수)
+}
+myFunc(1); //1이라는 value = argument (인자)
+```
+
+```javascript
+function sum() {
+  var i, _sum = 0;
+  for (i = 0; i < arguments.length; i++) {
+    document.write(i + ' : ' + arguments[i] + '<br>');
+    _sum += arguments[i];
+  }
+  return _sum;
+}
+
+document.write('result : ' + sum(1,2,3,4));
+
+// 0 : 1
+// 1 : 2  
+// 2 : 3
+// 3 : 4
+// result : 10
+```
+
+### | length of parameter
+
+```javascript
+function one(arg1) {
+  console.log(one.length, arguments.length); //1(arg), 2(val1, val2)
+}
+
+one('val1', 'val2');
+```
