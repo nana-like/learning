@@ -290,3 +290,103 @@ for (var i = 0; i < 5; i++) {
   }(i);
 }
 ```
+
+---
+
+## 16. 함수지향 - arguments
+
+* 유사 배열, object
+
+```javascript
+function myFunc(arg1) {
+  //arg1 라는 variable = parameter (매개변수)
+}
+myFunc(1); //1이라는 value = argument (인자)
+```
+
+```javascript
+function sum() {
+  var i, _sum = 0;
+  for (i = 0; i < arguments.length; i++) {
+    document.write(i + ' : ' + arguments[i] + '<br>');
+    _sum += arguments[i];
+  }
+  return _sum;
+}
+
+document.write('result : ' + sum(1,2,3,4));
+
+// 0 : 1
+// 1 : 2  
+// 2 : 3
+// 3 : 4
+// result : 10
+```
+
+### | length of parameter
+
+```javascript
+function one(arg1) {
+  console.log(one.length, arguments.length); //1(arg), 2(val1, val2)
+}
+
+one('val1', 'val2');
+```
+
+---
+
+## 17. 함수지향 - 함수의 호출
+
+* an OBJECT has a PROPERTY(S).
+* if the PROPERTY has FUNCTION(S), it's a METHOD.
+
+```javascript
+function sum(arg1, arg2) {
+  return arg1 + arg2;
+}
+
+sum(1, 2); //3
+
+//meanwhile...
+function apply() { [navtive code] } //내장 함수
+
+sum.apply(null, [1, 2]); //3
+```
+
+* 왜 이렇게 호출하는가? - 'null'이 들어가는 곳에 다른 것을 넣는 것이 실제 쓰임새 
+
+```javascript
+o1 = {val1:1, val2:2, val3:3}
+o2 = {v1:10, v2:50, v3:100, v4:25}
+
+function sum() {
+  var _sum = 0;
+  for (name in this) {
+    _sum += this[name];
+  }
+  return _sum;
+}
+
+alert(sum.apply(o1)); //6
+alert(sum.apply(o2)); //185
+
+//apply를 통해서 parameter를 넣으면 var this = o1;
+```
+
+```javascript
+function sum() {
+  var _sum = 0;
+  for (name in this) {
+    if (typeof this[name] !== 'function' ) {
+      _sum += this[name];
+    }
+  }
+  return _sum;
+}
+
+o1 = {val1:1, val2:2, val3:3, sum:sum}
+
+alert(o1.sum()); //6
+
+//위의 apply와 같지만 더 복잡하므로 apply를 사용함
+```
